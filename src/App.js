@@ -184,9 +184,10 @@ function App() {
                                         fontSize: '18px',
                                         border: 'none'
                                     }}
+                                    onChange={(e) => setEditVal(e.target.value)}
                                 />
                                 <button className='btn TodoList-saveBtn'
-                                    onClick={handleEditTodo()}
+                                    onClick={() => handleEditTodo(index, editVal)}
                                     style={{
                                         color: '#fff',
                                         backgroundColor: '#28a745'
@@ -200,7 +201,7 @@ function App() {
                                 {todo}
                                 <div>
                                     <button className='btn TodoList-editBtn'
-                                        onClick={() => setEditIndex()}
+                                        onClick={() => setEditIndex(index)}
                                         style={{
                                             color: '#fff',
                                             backgroundColor: 'blue',
