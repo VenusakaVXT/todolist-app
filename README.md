@@ -3,6 +3,8 @@ Previously, I also coded the [**TodoList**](https://venusakavxt.github.io/templa
 
 Additionally, the project is not built on [**creat-react-app**](https://github.com/facebook/create-react-app) but on the [**react-webpack**](https://github.com/VenusakaVXT/react-webpack) I created earlier.
 
+Different from the previous TodoList application, this time in addition to adding and deleting todos, I also added the todo editing function.
+
 # Start the TodoList project
 Install the project support libraries in the **node_modules** folder that I did not publish to the repository via the **package.json** file:
 ```
@@ -11,7 +13,7 @@ $ npm install
 
 Run the project:
 ```
-npm start
+$ npm start
 ```
 
 After starting the project, access on **local** with the address http://localhost:8080/ and the access address for machines on the same **LAN** is http://192.168.1.1:8080/.
