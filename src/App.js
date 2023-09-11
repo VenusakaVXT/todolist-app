@@ -76,7 +76,7 @@ const reducer = (state, action) => {
 
             newState = {
                 ...state,
-                todos: [...newtodos]
+                todos: [...newTodos]
             }
             break;
         default:
@@ -159,7 +159,7 @@ function App() {
                 </button>
             </form>
 
-            <ul className='TodoList-container' 
+            <ul className='TodoList-container'
                 style={{
                     paddingLeft: '0',
                     listStyle: 'none',
@@ -169,21 +169,58 @@ function App() {
                     <li key={index} className='TodoList-item'
                         style={{
                             padding: '8px 12px',
+                            display: 'flex',
+                            justifyContent: 'space-between',
                             overflow: 'hidden'
                         }}
                     >
-                        <>
-                            <input className='TodoList-input'
-                                defaultValue={todo}
-                                style={{
-                                    width: '100%',
-                                    fontSize: '18px',
-                                    border: 'none',
-                                    outline: 'none',
-                                    marginRight: '10px'
-                                }}
-                            />
-                        </>
+                        {editIndex === index ? (
+                            <>
+                                <input className='TodoList-input'
+                                    defaultValue={todo}
+                                    style={{
+                                        width: '100%',
+                                        marginRight: '10px',
+                                        fontSize: '18px',
+                                        border: 'none'
+                                    }}
+                                />
+                                <button className='btn TodoList-saveBtn'
+                                    onClick={handleEditTodo()}
+                                    style={{
+                                        color: '#fff',
+                                        backgroundColor: '#28a745'
+                                    }}
+                                >
+                                    Save
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                {todo}
+                                <div>
+                                    <button className='btn TodoList-editBtn'
+                                        onClick={() => setEditIndex()}
+                                        style={{
+                                            color: '#fff',
+                                            backgroundColor: 'blue',
+                                            marginRight: '6px'
+                                        }}
+                                    >
+                                        Edit
+                                    </button>
+                                    <button className='btn TodoList-deleteBtn'
+                                        onClick={() => dispatch(deleteTodo(index))}
+                                        style={{
+                                            color: '#fff',
+                                            backgroundColor: '#a40e26'
+                                        }}
+                                    >
+                                        Remove
+                                    </button>
+                                </div>
+                            </>
+                        )}
                     </li>
                 ))}
             </ul>
