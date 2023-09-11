@@ -104,7 +104,9 @@ function App() {
     }
 
     const handleEditTodo = (index, editVal) => {
-        dispatch(editTodo({ index, editVal }))
+        if (editVal !== '') {
+            dispatch(editTodo({ index, editVal }))
+        }
         setEditIndex(null)
         setEditVal('')
     }
@@ -185,6 +187,9 @@ function App() {
                                         border: 'none'
                                     }}
                                     onChange={(e) => setEditVal(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') handleEditTodo(index, editVal)
+                                    }}
                                 />
                                 <button className='btn TodoList-saveBtn'
                                     onClick={() => handleEditTodo(index, editVal)}
@@ -198,7 +203,18 @@ function App() {
                             </>
                         ) : (
                             <>
-                                {todo}
+                                <span 
+                                    style={{
+                                        width: '140px',
+                                        fontSize: '18px',
+                                        lineHeight: '1.9rem',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
+                                    }}
+                                >
+                                    {todo}
+                                </span>
                                 <div>
                                     <button className='btn TodoList-editBtn'
                                         onClick={() => setEditIndex(index)}
