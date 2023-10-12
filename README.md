@@ -3,12 +3,12 @@ Previously, I also coded the [**TodoList**](https://venusakavxt.github.io/templa
 
 Additionally, the project is not built on [**creat-react-app**](https://github.com/facebook/create-react-app) but on the [**react-webpack**](https://github.com/VenusakaVXT/react-webpack) I created earlier.
 
-In addition to experiencing the project on **facebook**'s **Create React App**, you can run react code on my **React Webpack** project by:
+Different from the previous TodoList application, this time in addition to adding and deleting todos, I also added the todo editing function.
+
+In addition to experiencing the project on **Create React App** of **facebook**, you can run React code on your **React Webpack** project by:
 ```
 $ git clone https://github.com/VenusakaVXT/react-webpack.git
 ```
-
-Different from the previous TodoList application, this time in addition to adding and deleting todos, I also added the todo editing function.
 
 # Start the TodoList project
 Install the project support libraries in the **node_modules** folder that I did not publish to the repository via the **package.json** file:
